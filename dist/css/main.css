@@ -6428,8 +6428,6 @@ main {
           background: green;
           z-index: 100;
           transition: .3s all ease-in-out; }
-        .loginform .box .boxinner .boxinput.active:after {
-          width: 100%; }
         .loginform .box .boxinner .boxinput input {
           background: none;
           border: 0;
@@ -6449,10 +6447,94 @@ main {
           align-items: center;
           z-index: -1;
           transition: .25s all ease-in-out; }
+        .loginform .box .boxinner .boxinput.active:after {
+          width: 100%; }
+        .loginform .box .boxinner .boxinput.active input {
+          outline: none;
+          box-shadow: none; }
+          .loginform .box .boxinner .boxinput.active input ~ label {
+            transform: scale(0.8) translate(-10px, -20px); }
         .loginform .box .boxinner .boxinput input:focus {
           outline: none;
           box-shadow: none; }
           .loginform .box .boxinner .boxinput input:focus ~ label {
             transform: scale(0.8) translate(-10px, -20px); }
+
+.login {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 3rem; }
+  .login ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: table;
+    min-width: 400px;
+    overflow: hidden; }
+    .login ul .number {
+      display: table-cell;
+      text-align: center;
+      position: relative; }
+      .login ul .number:last-child:after {
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 9; }
+      .login ul .number span {
+        width: 2rem;
+        height: 2rem;
+        justify-content: center;
+        align-items: center;
+        background: #dfdfdf;
+        border-radius: 50%;
+        font-weight: bold;
+        border: 1px solid #d6d4d4;
+        position: relative;
+        display: inline-flex;
+        z-index: 10; }
+      .login ul .number:after {
+        content: '';
+        display: block;
+        width: 100%;
+        background: #d6d4d4;
+        height: 3px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%); }
+      .login ul .number.active span {
+        background: green;
+        border: 1px solid green;
+        color: #fff; }
+      .login ul .number.active:first-child:after {
+        background: green;
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 5; }
+      .login ul .number.active:last-child:before {
+        content: '';
+        display: block;
+        width: 50%;
+        background: green;
+        height: 3px;
+        position: absolute;
+        top: 50%;
+        left: -50%;
+        transform: translateY(-50%);
+        z-index: 2; }
+      .login ul .number.active:after {
+        background: green; }
+  .login .bt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem; }
+    .login .bt li {
+      padding: 0 1rem; }
 
 /*# sourceMappingURL=main.css.map */

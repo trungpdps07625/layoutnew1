@@ -64,6 +64,29 @@ function devTool() {
 // })
 devTool()
 
-$('.boxinput input').on('focus blur', function() {
-    $(this).parents('.boxinput').toggleClass('active')
+$('.boxinput input').on('focus', function() {
+    $(this).parents('.boxinput').addClass('active')
 })
+$('.boxinput input').on('blur', function() {
+        $(this).val() ? $(this).parents('.boxinput').addClass('active') : $(this).parents('.boxinput').removeClass('active')
+    })
+    // $('.btn').on('click', function() {
+    //     $(this).parents('.menutoggle').toggleClass('active')
+    // })
+function button() {
+    $('.bt .next').on('click', function() {
+        var dem = $('.nav .active').length
+        dem += 1
+        $('.nav li:nth-child(' + dem + ')').addClass('active')
+    })
+    $('.bt .back').on('click', function() {
+        var dem = $('.nav .active').length
+        dem += 0
+        if (dem == 1) {
+            $('.nav li:nth-child(' + dem + ')').addClass('active')
+        } else {
+            $('.nav li:nth-child(' + dem + ')').removeClass('active')
+        }
+    })
+}
+button()
